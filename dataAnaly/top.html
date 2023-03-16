@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="nprogress.css"/>
+    <script src="nprogress.js"></script>
+</head>
+<style>
+    .top{
+        padding: 2% 5%;
+        
+    }
+    .form-inline{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    .table {
+        width: 92%;
+        margin: auto;
+
+    }
+    .table th {
+        text-align: center;
+        color: rgb(95, 92, 92);
+    }
+
+    .table-hover>tbody>tr:hover{
+        /* background-color: rgb(248, 234, 237); */
+        background-color: paleturquoise;
+    }
+    body{
+        /* background-color: rgb(245, 249, 250); */
+        /* background-color: rgb(200, 228, 253); */
+        background-color: rgb(255, 255, 255);
+    }
+    .nhu{
+       /* text-align: center; */
+       font-size: 20px;
+       color: rgb(0, 0, 0);
+    }
+    body .table thead{
+        border-top-left-radius: 20%;
+    }
+</style>
+<body>
+    <script>
+ 
+        !function(){
+         
+        function n(n,e,t){
+         
+        return n.getAttribute(e)||t
+         
+        }
+         
+        function e(n){
+         
+        return document.getElementsByTagName(n)
+         
+        }
+         
+        function t(){
+         
+        var t=e("script"),o=t.length,i=t[o-1];
+         
+        return{
+         
+        l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",200)
+         
+        }
+         
+        }
+         
+        function o(){
+         
+        a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,
+         
+        c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight
+         
+        }
+         
+        function i(){
+         
+        r.clearRect(0,0,a,c);
+         
+        var n,e,t,o,m,l;
+         
+        s.forEach(function(i,x){
+         
+        for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],
+         
+        null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,
+         
+        l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),
+         
+        t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))
+         
+        }),
+         
+        x(i)
+         
+        }
+         
+        var a,c,u,m=document.createElement("canvas"),
+         
+        d=t(),l="c_n"+d.l,r=m.getContext("2d"),
+         
+        x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||
+         
+        function(n){
+         
+        window.setTimeout(n,1e3/45)
+         
+        },
+         
+        w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,
+         
+        window.onmousemove=function(n){
+         
+        n=n||window.event,y.x=n.clientX,y.y=n.clientY
+         
+        },
+         
+        window.onmouseout=function(){
+         
+        y.x=null,y.y=null
+         
+        };
+         
+        for(var s=[],f=0;d.n>f;f++){
+         
+        var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})
+         
+        }
+         
+        u=s.concat([y]),
+         
+        setTimeout(function(){i()},100)
+         
+        }();
+         
+        </script>
+
+    <div style="text-align: center;background-color: rgb(146, 201, 252);height: 55px;margin-bottom: 0mm;">
+        <p style="font-size: 35px;color:rgb(240, 233, 233) ;">基于烟农画像构建烟叶生产分析系统</p>
+    </div>
+
+
+    <div class="top">
+        <form class="form-inline" enctype="multipart/form-data" id="uploadForm" >
+            <div class="left">
+                <div class="form-group">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <!-- <label for="exampleInputName2" style="color: rgb(36, 39, 27);">名字:</label> -->
+                    <input type="text" class="form-control" id="username" placeholder="请输入名称">
+                </div>
+                <button type="button" class="btn btn-default" id="search_button">搜索</button>
+            </div>
+            <div class="right">
+                <div class="form-group">
+                    <input type="file" id="file" name="file">
+                </div>
+                <button type="button" class="btn btn-default" id='upload_button'>点击上传</button>
+            </div>
+          </form>
+    </div>
+    <div class="firstTable" >
+    <table class="table table-hover table-bordered table-default ">
+        <caption class="nhu" id ="name"></caption>
+        <caption class="nhu" id ="problem"></caption>
+        <thead >
+          <tr style="background-color: rgb(198, 227, 252);">
+            <th ><img src="images/数据分析.png" style = "height: 30px;margin-right: 10px;">数据分析</th>
+            <th ><img src="images/打勾.png" style = "height: 27px;margin-right: 10px;">判断</th>
+            <th ><img src="images/润桐医药 [已恢复]_感叹号-48.png" style = "height: 27px;margin-right: 10px;">原因</th>
+            <th ><img src="images/解决方案.png" style = "height: 20px;margin-right: 10px;">解决措施</th>
+            <th ><img src="images/投诉建议.png" style = "height: 20px;margin-right: 10px;">建议参加的培训</th>
+          </tr>
+        </thead>
+        <tbody id ="faceInfo">
+
+         </tbody>
+      </table>
+    <div>
+</body>
+<script>
+           $(function(){
+            token = localStorage.getItem("token");
+            $("#upload_button").click(function(){
+                alert("文件表格过多时间可能较长，进度条在网页顶部。")
+                var formData = new FormData($('#uploadForm')[0]);
+                console.log(formData)
+                $.ajax({
+                    beforeSend: function(request){
+                    if(token==null){
+                        alert("请先登录！")
+                        window.location.href = 'login.html'
+                    }
+                    request.setRequestHeader("token",token)
+                },
+                    type:'post',
+                    url:'http://localhost:8009/region/analysis-result/uploadExcel',
+                    data:formData,
+                    cache:false,
+                    processData:false,
+                    contentType:false,
+                }).success(function(data){
+                   console.log(data)
+                }).error(function(){
+
+                });
+            })
+
+            $("#search_button").click(function(){
+                var username = $("#username").val()
+                $.ajax({
+                    beforeSend: function(request){
+                    if(token==null){
+                        alert("请先登录！")
+                        window.location.href = 'login.html'
+                    }
+                    request.setRequestHeader("token",token)
+                },
+                    type:'post',
+                    contentType:"application/json;charset=utf-8",
+                    url:'http://localhost:8009/region/analysis-result/getResultByName',
+                    data:JSON.stringify({"username":username}),
+                    cache:false,
+                    processData:false,
+                    dataType:"json",
+                }).success(function(data){
+                    $("#name").html("以下是  \""+data.data.name+"\"  的分析结果:")
+                    // $("#problem").html('\"'+data.data.name+'\" 所存在的问题:');
+                    var list = data.data.list
+                    console.log(list)
+                    // var li2 = '          <tr>'
+                                    
+                    //                 + '<th >数据分析</th>'
+                    //                  +'<th >判断</th>'
+                    //                  +'<th >原因</th>'
+                    //                  +'<th >解决措施</th>'
+                    //                  +'<th >建议</th>'
+                    //                  +'</tr>';
+                    var li2 = ''
+                    for(var i =0;i<list.length;i++){
+                        li2 +='<tr >'+
+                           '<th >'+list[i].dataAnaly+'</th>'+
+                           '<th >'+list[i].judge+'</th>'+
+                           '<th >'+list[i].reason+'</th>'+
+                           '<th >'+list[i].solution+'</th>'+
+                           '<th >'+list[i].suggest+'</th>'+
+                           '</tr>'
+                    }
+                    $("#faceInfo").html(li2)
+                }).error(function(){
+
+                });
+            })
+            onloadFunction(token)
+        })
+        function onloadFunction(){
+            $.ajax({
+                    beforeSend: function(request){
+                    if(token==null){
+                        alert("请先登录！")
+                        window.location.href = 'login.html'
+                    }
+                    request.setRequestHeader("token",token)
+                },
+                    type:'get',
+                    contentType:"application/json;charset=utf-8",
+                    url:'http://localhost:8009/region/analysis-result/getOneInfo',
+                    cache:false,
+                    processData:false,
+                    dataType:"json",
+                }).success(function(data){
+                    console.log(data)
+                    var list = data.data.data
+                    $("#name").html("以下是  \""+data.data.name+"\"  的分析结果:")
+                    // $("#problem").html('\"'+data.data.name+'\" 所存在的问题:');
+                    // var li2 = '          <tr>'
+                                    
+                    //                 + '<th >数据分析</th>'
+                    //                  +'<th >判断</th>'
+                    //                  +'<th >原因</th>'
+                    //                  +'<th >解决措施</th>'
+                    //                  +'<th >建议</th>'
+                    //                  +'</tr>';
+                    var li2 = ''
+                    for(var i =0;i<list.length;i++){
+                        li2 +='<tr >'+
+                           '<th >'+list[i].dataAnaly+'</th>'+
+                           '<th >'+list[i].judge+'</th>'+
+                           '<th >'+list[i].reason+'</th>'+
+                           '<th >'+list[i].solution+'</th>'+
+                           '<th >'+list[i].suggest+'</th>'+
+                           '</tr>'
+                    }
+                    $("#faceInfo").html(li2)
+                }).error(function(){
+
+                });
+        }
+    $(document).ajaxStart(function () {
+        NProgress.start();
+    }).ajaxStop(function () {
+        NProgress.done();
+        alert('加载完成。')
+    })
+
+</script>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面-X-admin2.2</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+        <link rel="stylesheet" type="text/css" href="nprogress.css"/>
+        <script src="nprogress.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <!-- <div class="x-nav">
+            <span class="layui-breadcrumb">
+                <a href="">首页</a>
+                <a href="">演示</a>
+                <a>
+                    <cite>导航元素</cite></a>
+            </span>
+            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+                <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+            </a>
+        </div> -->
+
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12"  >
+                    <div class="layui-card" >
+
+                        <div class="layui-card-body top">
+                            <form class="layui-form layui-col-space5">
+                                <!-- <div class="layui-inline layui-show-xs-block">
+                                    <input class="layui-input" autocomplete="off" placeholder="开始日" name="start" id="start">
+                                </div>
+
+                                <div class="layui-inline layui-show-xs-block">
+                                    <input class="layui-input" autocomplete="off" placeholder="截止日" name="end" id="end">
+                                </div> -->
+
+                                <!-- <div class="layui-inline layui-show-xs-block"> -->
+                                    <!-- <input type="text" name="username" placeholder="选择年龄段" autocomplete="off" class="layui-input" id="username"> -->
+                                    <!-- <select name="age" id="age" class="pull-down" style="width: 13%;height: 35px;">
+                                        <option value="">年龄段</option>
+                                        <option value="青年人人数">青年人(16~40岁)</option>
+                                        <option value="中年人人数">中年人(41~60岁)</option>
+                                        <option value="老年人人数">老年人(60岁以上)</option>
+                                      </select> -->
+                                <!-- </div> -->
+
+                                <!-- <div class="layui-inline layui-show-xs-block">
+                                     <input type="text" name="username" placeholder="选择年龄段" autocomplete="off" class="layui-input" id="username"> 
+                                    <select name="gender" id="gender" class="pull-down" style="width: 13%;height: 35px;">
+                                        <option value="">性别</option>
+                                        <option value="男性">男性</option>
+                                        <option value="女性">女性</option>
+               
+                                      </select>
+                                </div> -->
+                                <div class = "layui-inline layui-show-xs-block">
+                                    <input type = "text" placeholder="请输入姓名" id = "username">
+                                </div>
+                                <div class="layui-inline layui-show-xs-block">
+                                    <input type="button" value="搜索" class="layui-btn"  id="search_button">         
+                                </div>
+                            </form>
+                            <form enctype="multipart/form-data" id="uploadForm" >
+                                <div>
+                                    <input type="button" id="upload_button" value="点击上传" class="layui-btn" style="float:right; ">
+                                </div>
+                                <div>
+                                    <input type="file" value="选择文件" name="file" placeholder="excel文件" style="float:right;" >
+                                </div>
+                            </form>
+                        </div>
+                        <div class="layui-card-body layui-table">
+                            <table class="layui-table" >
+                                <thead id='faceInfo'>
+                                    <h4 style="margin-left: 45%;" id="name"></h4>
+                                    <tr>
+                                        <th >数据分析</th>
+                                        <th >判断</th>
+                                        <th >原因</th>
+                                        <th >解决措施</th>
+                                        <th >建议参加的培训</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                  
+                        <!-- <h4 style="margin-left: 1%;color: rgb(32, 113, 179);" id='total'>共12条</h4>
+                        <h4 style="margin-left: 1%;color: rgb(32, 113, 179);" id='totalP'>共12页</h4> -->
+                     
+                        <!-- <nav aria-label="Page navigation" style="margin-left: 40%;">
+                            <ul class="pagination" id="pageNum2">
+                               <li>
+                               <a href=" " aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                               </a>
+                                </li>
+                               <li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
+                               <li><a href="#">2</a></li>
+                               <li><a href="#">3</a></li>
+                               <li><a href="#">4</a></li>
+                               <li><a href="#">5</a></li>
+                               <li>
+                                  <a href="#" aria-label="Next">
+                                     <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                               </li>
+                            </ul>
+                            
+                          </nav> -->
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(function(){
+            token = localStorage.getItem("token");
+            $("#upload_button").click(function(){
+                alert("文件表格过多时间可能较长，进度条在网页顶部。")
+                var formData = new FormData($('#uploadForm')[0]);
+                $.ajax({
+                    beforeSend: function(request){
+                    if(token==null){
+                        alert("请先登录！")
+                        window.location.href = 'login.html'
+                    }
+                    request.setRequestHeader("token",token)
+                },
+                    type:'post',
+                    url:'http://localhost:8009/region/analysis-result/uploadExcel',
+                    data:formData,
+                    cache:false,
+                    processData:false,
+                    contentType:false,
+                }).success(function(data){
+                   console.log(data)
+                }).error(function(){
+
+                });
+            })
+
+            $("#search_button").click(function(){
+                var username = $("#username").val()
+                $.ajax({
+                    beforeSend: function(request){
+                    if(token==null){
+                        alert("请先登录！")
+                        window.location.href = 'login.html'
+                    }
+                    request.setRequestHeader("token",token)
+                },
+                    type:'post',
+                    contentType:"application/json;charset=utf-8",
+                    url:'http://localhost:8009/region/analysis-result/getResultByName',
+                    data:JSON.stringify({"username":username}),
+                    cache:false,
+                    processData:false,
+                    dataType:"json",
+                }).success(function(data){
+                    $("#name").html(data.data.name)
+                    var list = data.data.list
+                    console.log(list)
+                    var li2 = '          <tr>'
+                                    
+                                    + '<th >数据分析</th>'
+                                     +'<th >判断</th>'
+                                     +'<th >原因</th>'
+                                     +'<th >解决措施</th>'
+                                     +'<th >建议</th>'
+                                     +'</tr>';
+                    for(var i =0;i<list.length;i++){
+                        li2 +='<tr>'+
+                           '<th >'+list[i].dataAnaly+'</th>'+
+                           '<th >'+list[i].judge+'</th>'+
+                           '<th >'+list[i].reason+'</th>'+
+                           '<th >'+list[i].solution+'</th>'+
+                           '<th >'+list[i].suggest+'</th>'+
+                           '</tr>'
+                    }
+                    $("#faceInfo").html(li2)
+                }).error(function(){
+
+                });
+            })
+        })
+    $(document).ajaxStart(function () {
+        NProgress.start();
+    }).ajaxStop(function () {
+        NProgress.done();
+        alert('数据分析完毕，通过搜索农户名字即可')
+    })
+
+    </script>
+
+    <!-- <script type="text/html" id="toolbarDemo">
+        <div class = "layui-btn-container" > 
+            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>
+            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button > 
+            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>
+        </div > 
+    </script> -->
+    <script>layui.use('laydate',
+        function() {
+            var laydate = layui.laydate;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
+            });
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
+
+        });
+        </script>
+    <script>
+    layui.use('table',
+        function() {
+            var table = layui.table;
+            //监听单元格编辑
+        });
+    </script>
+
+
+</html>
